@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+    volumes:
+      - ./:/var/www/html
+    hostname: client
+    ports:
+      # The Nuxt app port
+      - "3000:3000"
+      # The Vite port for WebSocket
+      - "24679:24679"
